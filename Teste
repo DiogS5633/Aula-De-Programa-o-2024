@@ -1,0 +1,74 @@
+###########################################################################################
+##dioPrimeiros Comandos
+#git clone ENDEREÇO # Cria um repositório local fazendo cópia de um remoto
+#++git status # Apresenta um status sobre a sua branch e os arquivos
+#git log # Apresenta todos os commits realizados, por quem e a data
+#git log --stat # Apresenta a mais o que foi modificado no repositório em cada commit
+#git log --oneline # Apresenta de forma resumida em uma única linha cada commit
+#git shortlog # Apresenta os commits realizados agrupados por usuário
+#git diff # Apresenta as diferenças entre o conteúdo dos arquivos no repositório
+#git blame arquivo # Apresenta quem foi responsável por cada modificação no arquivo
+#git remote # Apresenta quais são os repositórios remotos
+#git remote -v # Apresenta quais são os repositórios remotos e onde se encontram (URL)
+############################################################################################
+##Adicionando e Atualizando os Repositórios
+#git pull # Atualiza o repositório local com que há de novo no remoto
+#git add ARQUIVO_DIRETORIO # Adiciona o arquivo a área de stage (seleção)
+## Confirma as alterações, gerando uma nova versão no repositório local
+#git commit -m "DESCRIÇÃO DO QUE FOI REALIZADO"
+#git commit -am "DESCRIÇÃO DO QUE FOI REALIZADO"
+#git commit --amend -m "DESCRIÇÃO DO QUE FOI REALIZADO"
+#git push # Envia a nova versão para o repositório remoto
+#############################################################################################
+nome   = 'joga'
+idade  = 25
+altura = 1.5 
+print('Olá Mundo!')
+
+valor = 5 # valor é do tipo int
+nome = 'João' # nome é do tipo str (pode-se usar ' ou ")
+print(valor)
+print(nome)
+
+nome = 'João'
+def diga_ola():
+    print('Olá ' + nome)
+diga_ola()
+
+nome = 'João'
+def diga_ola():
+    nome = 'Maria'
+    print(f'Olá {nome}')
+diga_ola()
+print('Olá ' + nome)
+
+#Texto: str
+#Numérico: int, float, complex
+#Sequenciais: list, tuple, range
+#Mapeamento: dict
+#Conjunto: set, frozenset
+#Lógico: bool
+#Binário: bytes, bytearray, memoryview
+
+valor = 5
+print(type(valor))
+
+nome = input('Digite seu nome: ')
+print(nome)
+
+#nome = ' João Paulo clea'
+#print(len(nome)) #tamanho da string
+#nome = nome.strip() #remove os espaços em branco nas extremidades
+#print(len(nome))
+#print(nome[1]) #o primeiro caractere é o de posição 0
+#print(nome[2:4]) #de 2 a 3 (último não incluso)
+#print(nome[-5:-1]) #começa a contagem pelo final da string
+#print(nome.lower()) #transforma em minúsculo
+#print(nome.upper()) #transforma em maiúsculo
+#print(nome.replace('o','0')) #substitui a string
+#print(nome.split(' ')) #returns ["João","Paulo"]
+#print('au' in nome)) #retorna True se existe na string
+#print('au' not in nome)) #retorna True se não existe na string
+#idade = 40
+#texto = 'Meu nome é {} e tenho {} anos.'
+#print(texto.format(nome,idade))
