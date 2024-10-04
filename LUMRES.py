@@ -89,7 +89,7 @@ def q13():
 def q14():
     base = float(input('Forneça a base do retângulo: '))
     altura = float(input('Forneça a altura do retângulo: '))
-    perimetro = 2 * (base + altura)
+    perimetro = 2 * (base *2 + altura*2)
     area = base * altura
     print(f'Perímetro: {perimetro}, Área: {area}')
 
