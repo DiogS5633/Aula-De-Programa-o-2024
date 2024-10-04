@@ -10,7 +10,7 @@ def q2():
 ################################################################################
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 def q3():
-    print((5 + 8 + 12) / 3)
+    print(f'Média : {round((5+8+12)/3,1)}')
 
 ################################################################################
 # 4. Faça um programa que leia e imprima um número inteiro.
@@ -29,7 +29,7 @@ def q5():
 # 6. Faça um programa que leia um número inteiro e imprima o seu antecessor e o seu sucessor.
 def q6():
     numero = int(input('Forneça um número inteiro: '))
-    print(f'Antecessor: {numero - 1}, Sucessor: {numero + 1}')
+    print(f'Antecessor: {numero} : {numero - 1}, Sucessor:{numero}: {numero + 1}')
 
 ################################################################################
 # 7. Faça um programa que leia o nome, o endereço e o telefone de um cliente e ao final, imprima esses dados.
@@ -50,7 +50,7 @@ def q8():
 # 9. Faça um programa que leia um número real e imprima ¼ deste número.
 def q9():
     numero = float(input('Forneça um número real: '))
-    print(f'1/4 do número: {numero / 4}')
+    print(f'1/4 do número: {round(numero / 4,2)}')
 
 ################################################################################
 # 10. Faça um programa que leia três números reais e calcule a média aritmética destes números. Ao final, o programa deve imprimir o resultado do cálculo.
@@ -59,7 +59,7 @@ def q10():
     numero2 = float(input('Forneça o segundo número real: '))
     numero3 = float(input('Forneça o terceiro número real: '))
     media = (numero1 + numero2 + numero3) / 3
-    print(f'Média aritmética: {media}')
+    print(f'Média aritmética: {round(media,2)}')
 
 ################################################################################
 # 11. Faça um programa que leia dois números reais e calcule as quatro operações básicas entre estes dois números, adição, subtração, multiplicação e divisão. Ao final, o programa deve imprimir os resultados dos cálculos.
