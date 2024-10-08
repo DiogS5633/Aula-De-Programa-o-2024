@@ -2,14 +2,16 @@
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 
 def q1():
-    numero1 = int(input("NUMERO INTEIRO UM: "))
-    numero2 = int(input("NUMERO INTEIRO DOIS:"))
+    numero1 = int(input("NUMERO INTEIRO UM:  "))
+    numero2 = int(input("NUMERO INTEIRO DOIS: "))
     nota = (numero1 + numero2)
-    print(f'Teste: {numero1} e {numero2}')
+    print(f'Teste: {numero1} e {numero2}\n')
 
 
     if nota >= 10:
         print('Aprovado')
+    else nota < 10 :
+        print ('Reprovado')    
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
@@ -17,26 +19,36 @@ def q1():
 #   20, este deverá ser apresentado subtraindo-se 5.
 
 def q2():
-    numero1 = int(input("NUMERO INTEIRO UM: "))
-    numero2 = int(input("NUMERO INTEIRO DOIS: "))
+    numero1 = int(input("NUMERO INTEIRO UM:  "))
+    numero2 = int(input("NUMERO INTEIRO DOIS:  "))
     nota = (numero1 + numero2)
-    print(f'Teste: {numero1} e {numero2}')
+    print(f'Teste: {numero1} e {numero2}\n')
 
 
     if nota > 20:
         print(f'Maior que 20: {nota + 8 }\n')
     elif nota <= 20:
         print(f'Menor que 20: {nota - 5 }\n ')
+
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+
 def q3():
-    num1 = int(input("Numero teste inteiro: "))
-    num1 = (num1/3)
-
-
-    if num1
+    num = int(input("Numero teste inteiro:  "))
+    if num % 3== 0:
+        print ("O valor Inserido é múltiplo de 3")
+    else : 
+        print("O valor Inserido Não é múltiplo de 3")     
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
+def q4():
+    numero = int(input("NUMERO UM:  "))
+    if numero % 5 == 0:
+        print("É divisivel por 5")
+    else :
+        print("Não é divisivel por 5")
+
+q4()           
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
@@ -170,3 +182,4 @@ def q3():
 
 q1()
 q2()
+q3()
