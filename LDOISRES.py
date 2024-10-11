@@ -47,8 +47,7 @@ def q4():
         print("É divisivel por 5")
     else :
         print("Não é divisivel por 5")
-
-q4()           
+ 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários

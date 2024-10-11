@@ -10,9 +10,9 @@ def q2():
     numero2 = int(input("NUMERO INTEIRO DOIS: "))
     soma = numero1 + numero2
     if soma > 20:
-        soma += 8
+        soma = soma + 8
     else:
-        soma -= 5
+        soma = soma - 5
     print(f'Resultado: {soma}')
 
 def q3():
