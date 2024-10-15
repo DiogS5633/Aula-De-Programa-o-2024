@@ -108,6 +108,7 @@ def q13():
         print("Reprovado")
     else:
         print("Em Prova Final")
+
 def q14():
     salario = float(input("Digite o salário: "))
     if salario <= 600:
