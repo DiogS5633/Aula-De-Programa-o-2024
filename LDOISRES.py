@@ -1,3 +1,7 @@
+#####################################################
+from datetime import date, datetime
+from deep_translator import GoogleTranslator 
+#####################################################
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 
@@ -179,7 +183,7 @@ def q14():
         desconto = 0.25 * salario
     else:
         desconto = 0.3 * salario
-    print(f"Desconto do INSS: R${desconto:.2f}")
+    print(f"Desconto do INSS: R${desconto}")
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
@@ -191,7 +195,7 @@ def q15():
         valor_venda = valor_compra * 1.45
     else:
         valor_venda = valor_compra * 1.30
-    print(f"Valor de venda: R${valor_venda:.2f}")
+    print(f"Valor de venda: R${valor_venda}")
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -247,7 +251,7 @@ def q17():
         valor = 250
     else:
         valor = 400
-    print(f"Nome: {nome}, Valor a pagar: R${valor:.2f}")
+    print(f"Nome: {nome}, Valor a pagar: R${valor}")
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
@@ -260,6 +264,15 @@ def q18():
         print(f"Mês: {meses[numero - 1]}")
     else:
         print("Não existe mês com este número")
+
+#def q18():
+#    mes = int(input('Digite um numero do mes:  '))
+#    if mes < 1 or mes > 12:
+#        print('Mes invalido')
+#    else:
+#        data = datetime.strptime(f'01/{mes}/24','%d/%m/%y')
+#        mes_extenso = data.strftime('%B')
+#        print(tradutor.translate(mes_extenso))
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -424,28 +437,61 @@ def q25():
     else:
         print("Índice de poluição aceitável")
 
-q1()
-q2()
-q3()
-q4()
-q5()
-q6()
-q7()
-q8()
-q9()
-q10()
-q11()
-q12()
-q13()
-q14()
-q15()
-q16()
-q17()
-q18()
-q19()
-q20()
-q21()
-q22()
-q23()
-q24()
-q25()
+
+
+questao = int(input('Questão a ser executada: '))
+eval(f'q{questao}')
+match questao:
+    case 1:
+        q1()
+    case 2:
+        q2()
+    case 3:
+        q3()
+    case 4:
+        q4()
+    case 5:
+        q5()
+    case 6:
+        q6()
+    case 7:
+        q7()
+    case 8:
+        q8()
+    case 9:
+        q9()
+    case 10:
+        q10()
+    case 11:
+        q11()
+    case 12:
+        q12()
+    case 13:
+        q13()
+    case 14:
+        q14()
+    case 15:
+        q15()       
+    case 16:
+        q16()
+    case 17:
+        q17()
+    case 18:
+        q18()
+    case 19:
+        q19()
+    case 20:
+        q20()
+    case 21:
+        q21()
+    case 22:
+        q22()
+    case 23:
+        q23()
+    case 24:
+        q24()
+    case 25:
+        q25()     
+    case _:
+        print('Questão Inválida')   
+
