@@ -1,6 +1,9 @@
 #####################################################
-from datetime import date, datetime
-from deep_translator import GoogleTranslator 
+from datetime import date, datetime           # pip3 install datetime
+from deep_translator import GoogleTranslator  # pip3 install deep-translator
+#####################################################
+HOJE = datetime.now()
+tradutor = GoogleTranslator(source = 'en', target = 'pt')
 #####################################################
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
@@ -257,22 +260,22 @@ def q17():
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
 
-def q18():
-    meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-    numero = int(input("Digite um número entre 1 e 12: "))
-    if 1 <= numero <= 12:
-        print(f"Mês: {meses[numero - 1]}")
-    else:
-        print("Não existe mês com este número")
-
 #def q18():
-#    mes = int(input('Digite um numero do mes:  '))
-#    if mes < 1 or mes > 12:
-#        print('Mes invalido')
+#    meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+#    numero = int(input("Digite um número entre 1 e 12: "))
+#    if 1 <= numero <= 12:
+#        print(f"Mês: {meses[numero - 1]}")
 #    else:
-#        data = datetime.strptime(f'01/{mes}/24','%d/%m/%y')
-#        mes_extenso = data.strftime('%B')
-#        print(tradutor.translate(mes_extenso))
+#        print("Não existe mês com este número")
+
+def q18():
+    mes = int(input('Digite um numero do mes:  '))
+    if mes < 1 or mes > 12:
+        print('Mes invalido')
+    else:
+        data = datetime.strptime(f'01/{mes}/24','%d/%m/%y')
+        mes_extenso = data.strftime('%B')
+        print(tradutor.translate(mes_extenso))
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -293,7 +296,7 @@ def q19():
     print(f"Pontos em ordem decrescente: {pontos}")
     if soma > 100:
         media = soma / 3
-        print(f"Média aritmética: {media:.2f}")
+        print(f"Média aritmética: {media}")
     else:
         print("Equipe desclassificada")
 
@@ -319,7 +322,7 @@ def q20():
         credito = 0.4 * saldo_medio
     else:
         credito = 0.5 * saldo_medio
-    print(f"Saldo médio: R${saldo_medio:.2f}, Crédito: R${credito:.2f}")
+    print(f"Saldo médio: R${saldo_medio}, Crédito: R${credito}")
 
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
@@ -362,7 +365,7 @@ def q22():
         consumo = 0
         print("Tipo de carro inválido")
     if consumo > 0:
-        print(f"Consumo estimado de combustível: {consumo:.2f} litros")
+        print(f"Consumo estimado de combustível: {consumo} litros")
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -437,8 +440,6 @@ def q25():
     else:
         print("Índice de poluição aceitável")
 
-
-
 questao = int(input('Questão a ser executada: '))
 eval(f'q{questao}')
 match questao:
@@ -494,4 +495,3 @@ match questao:
         q25()     
     case _:
         print('Questão Inválida')   
-
