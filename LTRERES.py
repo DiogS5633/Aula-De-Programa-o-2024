@@ -32,9 +32,15 @@ def q2():
 
 
 q2() 
+
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
-#def q3()
+def q3():
+   for x in range(1,500,5): # vai de 10 a 2
+        print(x)
+
+
+q3() 
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
