@@ -1,22 +1,40 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
+#def exemploPara():
+#    for x in range (10):     # vai de 0 a 9
+#        print(x)        
+#    for x in range(1,10,2):  # vai de 1 a 9, avançando de 2 em 2
+#        print(x)
+#    for x in range(1,10,-1): # vai de 10 a 2
+#        print(x)
+
+#def exemploEnquanto():
+#    opcao = -1
+#    while opcao !=0
+#        opcao = int(input('Escolha uma opcao (0 para sair): '))
+#        print(opcao)
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
-def q1()
+def q1():
+    for x in range (1,100):    
+        print(x)        
 
 
+
+q1()   
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 
-def q3():
-    num = int(input("Numero teste inteiro:  "))
-    if num % 2== 0:
-        print ("O valores Inserido é Par ")
-    
+def q2():
+   for x in range(100,1,-2): # vai de 10 a 2
+        print(x)
+
+
+q2() 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
-def q3()
+#def q3()
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
