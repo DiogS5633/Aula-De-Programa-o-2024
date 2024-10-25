@@ -46,9 +46,55 @@ q3()
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
 
+def q4():
+        for x in range(3)
+        nome =str(input('Degite seu nome: '))
+        idade = int(input('Digite a idade: '))
+        sexo == str(input('Digite seu sexo'))
+
+                if sexo == "m" and idade > 21
+                        print(f'O nome da pessoa é :{nome}')
+                else:
+                        print(f'Menor de idade')
+
+
+
+q4()
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+
+def q5():
+        erro = True
+        while erro == True:
+                fator1 = 0
+                try:
+                        fator1= int(input('Numero 1:  '))
+                        erro = False
+                except ValueError:  # só é executado para o tipo de erro ValueError
+                        print('O valor informado não um numero inteiro')
+                        erro = True 
+                except: # captura qualquer erro
+                        print('Ocoreu um erro desconhecido! Tente novamete!')
+                        erro = True 
+                else:
+                        erro = False # executa se não ocorrer erro
+                finally:
+                        print(f'Numero 1 = {fator1}') # mensagem sempre é exibida,com erro ou não         
+
+erro = True
+while erro == True:
+
+
+
+fator2= int(input('Numero 2:  '))
+produto = 0
+for _ in range(fator1):
+produto += fator2
+print(f'{fator1} + {fator2} ={produto}') 
+
+
+q5()
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
