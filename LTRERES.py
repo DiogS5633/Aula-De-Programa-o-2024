@@ -22,44 +22,36 @@ def q1():
         print(x)        
 
 
-
-q1()   
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 
 def q2():
-   for x in range(100,1,-2): # vai de 10 a 2
+   for x in range(100,1,-2):
         print(x)
 
-
-q2() 
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
 def q3():
-   for x in range(1,500,5): # vai de 10 a 2
+   for x in range(1,500,5):
         print(x)
 
-
-q3() 
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
 
 def q4():
-        for x in range(3)
-        nome =str(input('Degite seu nome: '))
-        idade = int(input('Digite a idade: '))
-        sexo == str(input('Digite seu sexo'))
+        for x in range(3):
+                nome = input('Degite seu nome: ')
+                idade = int(input('Digite a idade: '))
+                sexo = input('Digite seu sexo: ')
 
-                if sexo == "m" and idade > 21
-                        print(f'O nome da pessoa é :{nome}')
+                if sexo == "m" and idade > 21:
+                        print(f'O nome da pessoa é : {nome}')
                 else:
                         print(f'Menor de idade')
 
 
-
-q4()
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
@@ -72,7 +64,7 @@ def q5():
                         fator1= int(input('Numero 1:  '))
                         erro = False
                 except ValueError:  # só é executado para o tipo de erro ValueError
-                        print('O valor informado não um numero inteiro')
+                        print('O valor informado não um número inteiro')
                         erro = True 
                 except: # captura qualquer erro
                         print('Ocoreu um erro desconhecido! Tente novamete!')
@@ -82,19 +74,19 @@ def q5():
                 finally:
                         print(f'Numero 1 = {fator1}') # mensagem sempre é exibida,com erro ou não         
 
-erro = True
-while erro == True:
+        erro = True
+        while erro == True:
+                try:
+                        fator2 = int(input('Numero2: '))
+                        erro = False
+                except ValueError:
+                        print('O valor informado não é um número inteiro!')  
+                        erro = True
+        produto = 0
+        for _ in range (fator1):
+                produto += fator2
 
-
-
-fator2= int(input('Numero 2:  '))
-produto = 0
-for _ in range(fator1):
-produto += fator2
-print(f'{fator1} + {fator2} ={produto}') 
-
-
-q5()
+        print(f'{fator1} * {fator2} = {produto}')
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -103,11 +95,35 @@ q5()
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
 
+def q6():
+        anterior = 0
+        atual = 1
+        print(atual,end="")
+        for x in range(19):
+                proximo = anterior + atual
+                print(proximo,end="")
+                anterior = atual
+                atual = proximo
+
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
 
+def q7():
+        soma = 0
+        for x in range(15):
+                nome = input('Digite o nome do aluno: ')
+                nota1 = float(input('Digite a primeira nota do aluno'))
+                nota2 = float(input('Digite a segunda nota do aluno: '))
+
+                media = (nota1 + nota2 )/2
+                soma = soma + media
+                print(f'A nota da prova 1 é {nota1} e nota da prova 2 é {nota2} sendo sua media: {media} ')
+
+mediageral = soma/3
+
+print(f'A media geral da turma é : mediageral')
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -340,3 +356,21 @@ q5()
 #analisadas.
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
+
+questao = int(input('Questão a ser executada: '))
+eval(f'q{questao}')
+match questao:
+    case 1:
+        q1()
+    case 2:
+        q2()
+    case 3:
+        q3()
+    case 4:
+        q4()
+    case 5:
+        q5()
+    case 6:
+        q6()
+    case 5:
+        q7()    
