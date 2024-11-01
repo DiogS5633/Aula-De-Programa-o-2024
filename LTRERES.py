@@ -1,6 +1,8 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
+
+from util import *
 #def exemploPara():
 #    for x in range (10):     # vai de 0 a 9
 #        print(x)        
@@ -15,9 +17,15 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 #        opcao = int(input('Escolha uma opcao (0 para sair): '))
 #        print(opcao)
 
+def exemplosInputPersonalizados():
+    num = input_int('Inteiro: ')
+    num2 = input_float('Real: ')
+    senha = input_senha('Senha: ')
+
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
 def q1():
+        
     for x in range (1,100):    
         print(x)        
 
@@ -25,6 +33,7 @@ def q1():
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 
 def q2():
+
    for x in range(100,1,-2):
         print(x)
 
@@ -32,6 +41,7 @@ def q2():
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
 def q3():
+
    for x in range(1,500,5):
         print(x)
 
@@ -41,6 +51,7 @@ def q3():
 #e tiver mais de 21 anos.
 
 def q4():
+
         for x in range(3):
                 nome = input('Degite seu nome: ')
                 idade = int(input('Digite a idade: '))
@@ -57,6 +68,7 @@ def q4():
 #lidos. Suponha que os números lidos sejam positivos.
 
 def q5():
+
         erro = True
         while erro == True:
                 fator1 = 0
@@ -96,6 +108,7 @@ def q5():
 # 1 1 2 3 5 8 13 21
 
 def q6():
+
         anterior = 0
         atual = 1
         print(atual,end="")
@@ -111,19 +124,23 @@ def q6():
 #imprimir a média geral da turma.
 
 def q7():
+        
         soma = 0
-        for x in range(15):
-                nome = input('Digite o nome do aluno: ')
-                nota1 = float(input('Digite a primeira nota do aluno'))
-                nota2 = float(input('Digite a segunda nota do aluno: '))
 
-                media = (nota1 + nota2 )/2
-                soma = soma + media
-                print(f'A nota da prova 1 é {nota1} e nota da prova 2 é {nota2} sendo sua media: {media} ')
+for x in range (15):
+     nome = input("Digite o nome do aluno: ")
+     nota1 = float(input("Digite a nota 1 do aluno: "))
+     nota2 = float(input("Digite a nota 2 do aluno: "))
+soma = 0
+media = (nota1 + nota2) / 2
+soma = soma + media
 
-mediageral = soma/3
+print(f'A nota da Primeira prova é {nota1} e a nota de Segunda prova é {nota2} sendo sua média: {media}')
 
-print(f'A media geral da turma é : mediageral')
+mediageral = soma / 3
+
+print(f'A média geral de turma é: {mediageral}')
+
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -131,6 +148,22 @@ print(f'A media geral da turma é : mediageral')
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+
+def q8():
+
+        for x in range(3):
+                nome = input('Digite o NOME: ')
+                salariobruto = float(input('digite o salario bruto: '))
+
+        if salariobruto < 1300 :
+                print(f'O Fulano {nome} está isento de declaração.')
+
+        if salariobruto >= 1300 and salariobruto < 2300:
+                print(f'O Senhor {nome} ira pagar {salariobruto * 10 /100} do sálario.')
+
+        if salariobruto >= 2300:
+                print(f'O Senhor {nome} ira pagar {salariobruto * 15 /100} do sálario.')
+
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -141,6 +174,26 @@ print(f'A media geral da turma é : mediageral')
 #• A quantidade de pessoas que responderam regular;
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
+def q9():
+
+        qtdePessoasExcelente = 0
+        somaIdadeExcelente = 0
+        qtdePessoasRegular = 0
+        qtdePessoasBom = 0
+qtdeTotalPessoas = int(input('Número de Pessoas: '))
+for x in range(qtdeTotalPessoas):
+                        idade = int(input('Idade: '))
+                        opiniao = int(input('Opinião ([3]-Excelente - [2]-Bom - [1]-Regular): '))
+match(opiniao):
+             case 1: qtdePessoasRegular += 1
+             case 2: qtdePessoasBom += 1
+             case 3:
+                 qtdePessoasExcelente +=1
+                 somaIdadeExcelente += idade
+             case _: print('Opção Inválida!')
+print(f'Média idade excelente: {somaIdadeExcelente/qtdePessoasExcelente}')
+print(f'Qtde de pessoas regular: {qtdePessoasRegular}')
+print(f'% de pessoas que responderam bom: {qtdePessoasBom/qtdeTotalPessoas*100}%')
 
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
@@ -373,4 +426,8 @@ match questao:
     case 6:
         q6()
     case 5:
-        q7()    
+        q7()
+    case 6:
+        q8()
+    case 7:
+        q9()
