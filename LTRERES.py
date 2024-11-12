@@ -203,7 +203,35 @@ print(f'% de pessoas que responderam bom: {qtdePessoasBom/qtdeTotalPessoas*100}%
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
-    
+
+def q10():
+
+        times = 30
+        jogadores_por_time = 12
+
+
+        times_dados = [
+                {"jogadores": [{"peso": 80, "idade": 25}, {"peso": 85, "idade": 30}]}]
+
+def calcular_informacoes(times_dados):
+    for i, time in enumerate(times_dados):
+        pesos = [jogador["peso"] for jogador in time["jogadores"]]
+        idades = [jogador["idade"] for jogador in time["jogadores"]]
+        
+        peso_medio = sum(pesos) / len(pesos)
+        idade_medio = sum(idades) / len(idades)
+        jogador_mais_pesado = max(pesos)
+        jogador_mais_jovem = min(idades)
+        
+        print(f"Time {i+1}:")
+        print(f"Peso Médio: {peso_medio:.2f}")
+        print(f"Idade Média: {idade_medio:.2f}")
+        print(f"Jogador Mais Pesado: {jogador_mais_pesado}kg")
+        print(f"Jogador Mais Jovem: {jogador_mais_jovem} anos\n")
+        
+calcular_informacoes(times_dados)
+
+
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
