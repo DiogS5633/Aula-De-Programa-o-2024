@@ -319,7 +319,7 @@ while True:
     total_litros += litros_consumidos
     print(f"Distância percorrida: {distancia} km, Litros consumidos: {litros_consumidos:.2f} L")
 
-print(f"Total de litros gastos na viagem: {total_litros:.
+print(f"Total de litros gastos na viagem: {total_litros}")
 
 # Calcular imposto de renda para um grupo de contribuintes
 total_imposto = 0
