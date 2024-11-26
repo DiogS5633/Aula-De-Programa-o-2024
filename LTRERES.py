@@ -404,6 +404,13 @@ def q18():
 #Obs.: Considere aprovado com nota >= 7.0
 
 def q19():
+
+while True:
+        numero_alunos = int(input("Número da conta (0 para sair): "))
+        if numeros_alunos == 0:
+            break
+
+
     relatorio = '\nNOME\tN1\tN2\tMEDIA\n'
     media_geral = 0
     qtde_alunos = input_int('Qtde de Alunos: ')
@@ -418,7 +425,7 @@ def q19():
     print(relatorio)
     print(f'\nMédia Geral: {round(media_geral,1)}')
 
-git
+
 #20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
 #• Qual o seu time de coração?
 #1-Fluminense;
