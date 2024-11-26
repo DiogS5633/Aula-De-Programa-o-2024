@@ -124,22 +124,19 @@ def q6():
 #imprimir a média geral da turma.
 
 def q7():
-        
-        soma = 0
-
-for x in range (15):
-     nome = input("Digite o nome do aluno: ")
-     nota1 = float(input("Digite a nota 1 do aluno: "))
-     nota2 = float(input("Digite a nota 2 do aluno: "))
-soma = 0
-media = (nota1 + nota2) / 2
-soma = soma + media
-
-print(f'A nota da Primeira prova é {nota1} e a nota de Segunda prova é {nota2} sendo sua média: {media}')
-
-mediageral = soma / 3
-
-print(f'A média geral de turma é: {mediageral}')
+    relatorio = '\nNOME\tN1\tN2\tMEDIA\n'
+    media_geral = 0
+    qtde_alunos = input_int('Qtde de Alunos: ')
+    for _ in range(qtde_alunos):
+        nome = input('Nome: ')
+        n1 = input_float('Nota 1: ')
+        n2 = input_float('Nota 2: ')
+        media = (n1 + n2) / 2
+        media_geral += media
+        relatorio += f'{nome}\t{n1}\t{n2}\t{round(media,1)}\n'
+    media_geral = media_geral / qtde_alunos
+    print(relatorio)
+    print(f'\nMédia Geral: {round(media_geral,1)}')
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
@@ -165,36 +162,6 @@ def q8():
                 print(f'O Senhor {nome} ira pagar {salariobruto * 15 /100} do sálario.')
 
 
-#9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
-#uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
-#a um questionário no qual constava sua idade e a sua opinião em relação ao filme:
-#excelente - 3; bom - 2; regular - 1. Criar um programa que receba a idade e a
-#opinião de 20 espectadores, calcule e imprima:
-#• A média das idades das pessoas que responderam excelente;
-#• A quantidade de pessoas que responderam regular;
-#• A percentagem de pessoas que responderam bom entre todos os expectadores
-#analisados.
-def q9():
-
-        qtdePessoasExcelente = 0
-        somaIdadeExcelente = 0
-        qtdePessoasRegular = 0
-        qtdePessoasBom = 0
-qtdeTotalPessoas = int(input('Número de Pessoas: '))
-for x in range(qtdeTotalPessoas):
-                        idade = int(input('Idade: '))
-                        opiniao = int(input('Opinião ([3]-Excelente - [2]-Bom - [1]-Regular): '))
-match(opiniao):
-             case 1: qtdePessoasRegular += 1
-             case 2: qtdePessoasBom += 1
-             case 3:
-                 qtdePessoasExcelente +=1
-                 somaIdadeExcelente += idade
-             case _: print('Opção Inválida!')
-print(f'Média idade excelente: {somaIdadeExcelente/qtdePessoasExcelente}')
-print(f'Qtde de pessoas regular: {qtdePessoasRegular}')
-print(f'% de pessoas que responderam bom: {qtdePessoasBom/qtdeTotalPessoas*100}%')
-
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -204,42 +171,45 @@ print(f'% de pessoas que responderam bom: {qtdePessoasBom/qtdeTotalPessoas*100}%
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
 
-def q10():
-
-        times = 30
-        jogadores_por_time = 12
-
-
-        times_dados = [
-                {"jogadores": [{"peso": 80, "idade": 25}, {"peso": 85, "idade": 30}]}]
-
-def calcular_informacoes(times_dados):
-    for i, time in enumerate(times_dados):
-        pesos = [jogador["peso"] for jogador in time["jogadores"]]
-        idades = [jogador["idade"] for jogador in time["jogadores"]]
-        
-        peso_medio = sum(pesos) / len(pesos)
-        idade_medio = sum(idades) / len(idades)
-        jogador_mais_pesado = max(pesos)
-        jogador_mais_jovem = min(idades)
-        
-        print(f"Time {i+1}:")
-        print(f"Peso Médio: {peso_medio:.2f}")
-        print(f"Idade Média: {idade_medio:.2f}")
-        print(f"Jogador Mais Pesado: {jogador_mais_pesado}kg")
-        print(f"Jogador Mais Jovem: {jogador_mais_jovem} anos\n")
-        
-calcular_informacoes(times_dados)
 
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
 
+def q11():
+
+    count = 0
+
+    while True:
+            num = int(input("Digite um número (0 para sair): "))
+            if num == 0:
+                        break
+            if 100 <= num <= 200:
+                         count += 1
+
+print(f"Números entre 100 e 200 digitados: {count}")
+
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+
+def q12():
+
+    populacao_A = 5000000
+    taxa_A = 0.03
+    populacao_B = 7000000
+    taxa_B = 0.02
+    anos = 0
+
+    while populacao_A <= populacao_B:
+            populacao_A += populacao_A * taxa_A
+            populacao_B += populacao_B * taxa_B
+            anos += 1
+
+print(f"Anos necessários para que a população do país A ultrapasse a do país B: {anos}")
+
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -255,13 +225,77 @@ calcular_informacoes(times_dados)
 #• O total de consumo para os três tipos de consumidor
 #• Amédia de consumo dos tipos 1 e 2
 
+def q13():
+
+    consumidores = []
+
+while True:
+    numero = int(input("Número do consumidor (0 para sair): "))
+    if numero == 0:
+        break
+    kwh = float(input("Quantidade de kWh consumidos: "))
+    tipo = int(input("Tipo do consumidor (1-Residencial, 2-Comercial, 3-Industrial): "))
+    
+    if tipo == 1:
+        preco = 0.3
+    elif tipo == 2:
+        preco = 0.5
+    elif tipo == 3:
+        preco = 0.7
+    
+    custo_total = kwh * preco
+    consumidores.append((numero, custo_total, tipo, kwh))
+
+total_consumo_residencial = sum([c[3] for c in consumidores if c[2] == 1])
+total_consumo_comercial = sum([c[3] for c in consumidores if c[2] == 2])
+total_consumo_industrial = sum([c[3] for c in consumidores if c[2] == 3])
+
+print(f"Total consumo residencial: {total_consumo_residencial} kWh")
+print(f"Total consumo comercial: {total_consumo_comercial} kWh")
+print(f"Total consumo industrial: {total_consumo_industrial} kWh")
+
+
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
+
+def q14():
+
+    def fatorial(n):
+            if n == 0:
+                return 1
+            else:
+                return n * fatorial(n-1)
+
+while True:
+    num = int(input("Digite um número inteiro (menor que 1 para sair): "))
+    if num < 1:
+        break
+    print(f"Fatorial de {num} é {fatorial(num)}")
+
+
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
+
+def q15():
+
+    menos_21 = 0
+    mais_50 = 0
+
+while True:
+    idade = int(input("Digite a idade (valor negativo para sair): "))
+    if idade < 0:
+        break
+    if idade < 21:
+        menos_21 += 1
+    if idade > 50:
+        mais_50 += 1
+
+print(f"Total de pessoas com menos de 21 anos: {menos_21}")
+print(f"Total de pessoas com mais de 50 anos: {mais_50}")
+
 
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
@@ -277,6 +311,23 @@ calcular_informacoes(times_dados)
 #  2 é o Quociente (resultado inteiro da divisão)
 #  0 é o Resto da Divisão
 
+def q16():
+
+    dividendo = int(input("Digite o dividendo: "))
+    divisor = int(input("Digite o divisor: "))
+
+quociente = 0
+resto = dividendo
+
+while resto >= divisor:
+    resto -= divisor
+    quociente += 1
+
+print(f"Quociente: {quociente}")
+print(f"Resto: {resto}")
+
+
+
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
 #• número de pedido
@@ -287,22 +338,86 @@ calcular_informacoes(times_dados)
 #O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
 #como número do pedido.
 
+
+def q17():
+
+    pedidos = []
+
+while True:
+    numero_pedido = int(input("Número do pedido (0 para sair): "))
+    if numero_pedido == 0:
+        break
+    dia = int(input("Dia do pedido: "))
+    mes = int(input("Mês do pedido: "))
+    ano = int(input("Ano do pedido: "))
+    preco_unitario = float(input("Preço unitário: "))
+    quantidade = int(input("Quantidade: "))
+    
+    valor_total = preco_unitario * quantidade
+    pedidos.append(valor_total)
+
+print(f"Valor total da compra: R$ {sum(pedidos):.2f}")
+
+
+
+
 #18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
 #serviços diários de:
 #• R$15,00, se o número de dias for menor que 10;
 #• R$8,00, se o número de dias for maior ou igual a 10;
-#Faça umprograma que imprima o nome, a conta e o número da conta de cada
+#Faça um programa que imprima o nome, a conta e o número da conta de cada
 #cliente e ao final o total faturado pela pousada.
 #O programa deverá ler novos clientes até que o usuário digite 0 (zero) como
 #número da conta.
 
-#19. Emuma Universidade, os alunos das turmas de informática fizeram uma prova
+def q18():
+
+    faturado = 0
+
+    while True:
+        numero_conta = int(input("Número da conta (0 para sair): "))
+        if numero_conta == 0:
+            break
+
+        nome = input("Nome do cliente: ")
+        dias = int(input("Número de dias: "))
+
+        diaria = 30.0
+        if dias < 10:
+            taxa = 15.0
+        else:
+            taxa = 8.0
+
+    conta = (diaria * dias) + (taxa * dias)   
+    faturado += conta
+
+    print(f"Nome: {nome}, Conta: R$ {conta}, Número da conta: {numero_conta}")
+
+    print(f"Total faturado pela pousada: R$ {faturado}")
+
+#19. Em uma Universidade, os alunos das turmas de informática fizeram uma prova
 #de algoritmos. Cada turma possui um número de alunos. Criar um programa que
 #imprima:
 #• quantidade de alunos aprovados;
 #• média de cada turma;
 #• percentual de reprovados.
-#Obs.: Considere aprovado comnota >= 7.0
+#Obs.: Considere aprovado com nota >= 7.0
+
+def q19():
+    relatorio = '\nNOME\tN1\tN2\tMEDIA\n'
+    media_geral = 0
+    qtde_alunos = input_int('Qtde de Alunos: ')
+    for _ in range(qtde_alunos):
+        nome = input('Nome: ')
+        n1 = input_float('Nota 1: ')
+        n2 = input_float('Nota 2: ')
+        media = (n1 + n2) / 2
+        media_geral += media
+        relatorio += f'{nome}\t{n1}\t{n2}\t{round(media,1)}\n'
+    media_geral = media_geral / qtde_alunos
+    print(relatorio)
+    print(f'\nMédia Geral: {round(media_geral,1)}')
+
 
 #20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
 #• Qual o seu time de coração?
@@ -437,25 +552,3 @@ calcular_informacoes(times_dados)
 #analisadas.
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
-
-questao = int(input('Questão a ser executada: '))
-eval(f'q{questao}')
-match questao:
-    case 1:
-        q1()
-    case 2:
-        q2()
-    case 3:
-        q3()
-    case 4:
-        q4()
-    case 5:
-        q5()
-    case 6:
-        q6()
-    case 5:
-        q7()
-    case 6:
-        q8()
-    case 7:
-        q9()
