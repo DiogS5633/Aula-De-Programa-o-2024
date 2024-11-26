@@ -418,7 +418,7 @@ def q19():
     print(relatorio)
     print(f'\nMédia Geral: {round(media_geral,1)}')
 
-
+git
 #20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
 #• Qual o seu time de coração?
 #1-Fluminense;
